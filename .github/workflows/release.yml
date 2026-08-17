@@ -30,8 +30,12 @@ jobs:
       - name: Install Cider
         run: flutter pub global activate cider
 
+      - name: Normalize version (strip leading v)
+        id: norm
+        run: echo "version=$(echo '${{ github.event.release.tag_name }}' | sed 's/^v//')" >> "$GITHUB_OUTPUT"
+
       - name: Set new Flutter version
-        run: cider version ${{ github.event.release.tag_name }}
+        run: cider version ${{ steps.norm.outputs.version }}
 
       - name: Set Sidekick.desktop version
         uses: DamianReeves/write-file-action@v1.0
@@ -64,7 +68,7 @@ jobs:
         run: flutter pub run build_runner build --delete-conflicting-outputs
 
       - name: Flutter build app
-        run: flutter build linux
+        run: flutter build linux --release
 
       - name: Compress artifacts
         uses: TheDoctor0/zip-release@0.6.1
@@ -134,8 +138,12 @@ jobs:
       - name: Install Cider
         run: flutter pub global activate cider
 
+      - name: Normalize version (strip leading v)
+        id: norm
+        run: echo "version=$(echo '${{ github.event.release.tag_name }}' | sed 's/^v//')" >> "$GITHUB_OUTPUT"
+
       - name: Set new Flutter version
-        run: cider version ${{ github.event.release.tag_name }}
+        run: cider version ${{ steps.norm.outputs.version }}
 
       - name: Set release changelog
         run: cider release
@@ -147,7 +155,7 @@ jobs:
         run: flutter pub run build_runner build --delete-conflicting-outputs
 
       - name: Flutter build app
-        run: flutter build macos
+        run: flutter build macos --release
 
       - name: Create dmg
         run: |
@@ -197,8 +205,12 @@ jobs:
       - name: Install Cider
         run: flutter pub global activate cider
 
+      - name: Normalize version (strip leading v)
+        id: norm
+        run: echo "version=$(echo '${{ github.event.release.tag_name }}' | sed 's/^v//')" >> "$GITHUB_OUTPUT"
+
       - name: Set new Flutter version
-        run: cider version ${{ github.event.release.tag_name }}
+        run: cider version ${{ steps.norm.outputs.version }}
 
       - name: Set release changelog
         run: cider release
@@ -207,7 +219,7 @@ jobs:
         uses: ashley-taylor/regex-property-action@1.2
         id: msixver
         with:
-          value: ${{ github.event.release.tag_name }}
+          value: ${{ steps.norm.outputs.version }}
           regex: (\-\w+)|(\+\w+)
           replacement: ""
 
@@ -237,7 +249,7 @@ jobs:
         run: flutter pub run build_runner build --delete-conflicting-outputs
 
       - name: Flutter build app
-        run: flutter build windows
+        run: flutter build windows --release
 
       - name: Create MSIX
         run: flutter pub run msix:create

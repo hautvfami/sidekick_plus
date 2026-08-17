@@ -32,7 +32,7 @@ jobs:
         run: flutter analyze
 
       - name: Flutter build app
-        run: flutter build linux
+        run: flutter build linux --release
 
       - name: Compress artifacts
         uses: TheDoctor0/zip-release@0.6.1
@@ -93,7 +93,7 @@ jobs:
         run: flutter analyze
 
       - name: Flutter build app
-        run: flutter build macos
+        run: flutter build macos --release
 
       - name: Install create-dmg
         run: brew install create-dmg
@@ -169,7 +169,7 @@ jobs:
           write-mode: overwrite
 
       - name: Flutter build app
-        run: flutter build windows
+        run: flutter build windows --release
 
       - name: Create MSIX
         run: flutter pub run msix:create
