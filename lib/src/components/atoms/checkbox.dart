@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 /// Checkbox button
 class SkCheckBox extends HookWidget {
@@ -27,7 +27,7 @@ class SkCheckBox extends HookWidget {
     // Render icon logic
     Icon renderIcon() {
       return Icon(
-        value ? MdiIcons.checkboxMarked : MdiIcons.checkboxBlankOutline,
+        value ? LucideIcons.checkSquare : LucideIcons.square,
         size: 15,
       );
     }

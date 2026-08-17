@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:sidekick/src/modules/common/utils/helpers.dart';
 
 import '../../../components/atoms/empty_dataset.dart';
@@ -12,7 +12,7 @@ class EmptyProjects extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return EmptyDataset(
-      icon: Icon(MdiIcons.folder),
+      icon: Icon(LucideIcons.folder),
       child: Padding(
         padding: const EdgeInsets.all(40.0),
         child: Column(

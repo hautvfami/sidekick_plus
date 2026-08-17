@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import '../../../modules/common/dto/channel.dto.dart';
 import '../../../modules/common/dto/master.dto.dart';
@@ -42,7 +42,7 @@ class FvmReleaseStatus extends ConsumerWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(
-            MdiIcons.checkCircle,
+            LucideIcons.checkCircle,
             size: 20,
           ),
           SizedBox(width: release.isChannel ? 10 : 0),
@@ -65,10 +65,10 @@ class FvmReleaseStatus extends ConsumerWidget {
       children: [
         Text(currentRelease ?? ''),
         const SizedBox(width: 10),
-        Icon(MdiIcons.arrowRight, size: 15),
+        Icon(LucideIcons.arrowRight, size: 15),
         const SizedBox(width: 10),
         OutlinedButton.icon(
-          icon: Icon(MdiIcons.triangle, size: 15),
+          icon: Icon(LucideIcons.triangle, size: 15),
           label: Text(release.release?.version ?? ''),
           onPressed: () {
             ref.read(fvmQueueProvider.notifier).upgrade(context, release);

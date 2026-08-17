@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:sidekick/src/components/organisms/app_bottom_bar.dart';
 import 'package:sidekick/src/modules/common/utils/helpers.dart';
 import 'package:sidekick/src/modules/common/utils/indexed_transition_switcher.dart';
@@ -136,7 +136,7 @@ class AppShell extends HookConsumerWidget {
                 renderNavButton(
                   context,
                   context.i18n('modules:common.navButtonProjects'),
-                  MdiIcons.folderMultiple,
+                  LucideIcons.folders,
                 ),
                 renderNavButton(
                   context,

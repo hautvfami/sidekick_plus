@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:sidekick/src/modules/common/utils/helpers.dart';
 
 import '../../../components/atoms/typography.dart';
@@ -25,8 +25,8 @@ class FvmReleaseListItem extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return SkListTile(
       leading: release.isChannel
-          ? Icon(MdiIcons.alphaCCircle)
-          : Icon(MdiIcons.alphaRCircle),
+          ? Icon(LucideIcons.radioTower)
+          : Icon(LucideIcons.package),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -35,7 +35,7 @@ class FvmReleaseListItem extends ConsumerWidget {
           release.isGlobal
               ? ActionChip(
                   label: Caption(context.i18n('modules:fvm.components.global')),
-                  avatar: Icon(MdiIcons.information, size: 20),
+                  avatar: Icon(LucideIcons.info, size: 20),
                   onPressed: () {
                     showGlobalInfoDialog(context);
                   },

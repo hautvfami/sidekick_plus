@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:sidekick/src/modules/common/utils/helpers.dart';
 
 import '../../../components/atoms/typography.dart';
@@ -57,21 +57,21 @@ class FvmReleaseActions extends ConsumerWidget {
         value: FvmReleaseActionOptions.global,
         child: renderMenuButton(
           label: context.i18n('modules:fvm.components.setAsGlobal'),
-          icon: MdiIcons.earth,
+          icon: LucideIcons.globe,
         ),
       ),
       PopupMenuItem(
         value: FvmReleaseActionOptions.detail,
         child: renderMenuButton(
           label: context.i18n('modules:pubPackages.components.details'),
-          icon: MdiIcons.information,
+          icon: LucideIcons.info,
         ),
       ),
       PopupMenuItem(
         value: FvmReleaseActionOptions.remove,
         child: renderMenuButton(
           label: context.i18n('modules:projects.components.remove'),
-          icon: MdiIcons.delete,
+          icon: LucideIcons.trash,
         ),
       ),
     ];
@@ -84,7 +84,7 @@ class FvmReleaseActions extends ConsumerWidget {
           value: FvmReleaseActionOptions.upgrade,
           child: renderMenuButton(
             label: context.i18n('modules:fvm.components.upgrade'),
-            icon: MdiIcons.update,
+            icon: LucideIcons.download,
           ),
         ),
       );
@@ -120,7 +120,7 @@ class FvmReleaseActions extends ConsumerWidget {
       itemBuilder: (context) {
         return renderMenuOptions(context);
       },
-      child: Icon(MdiIcons.dotsVertical),
+      child: Icon(LucideIcons.moreVertical),
     );
   }
 }

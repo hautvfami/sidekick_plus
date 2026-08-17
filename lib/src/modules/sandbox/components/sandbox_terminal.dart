@@ -4,7 +4,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fvm/fvm.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import '../../../modules/common/dto/release.dto.dart';
 import '../../../modules/common/utils/notify.dart';
@@ -172,7 +172,7 @@ class SandboxTerminal extends HookConsumerWidget {
                     controller: textController,
                     onSubmitted: onSubmit,
                     decoration: InputDecoration(
-                      icon: Icon(MdiIcons.chevronRight),
+                      icon: Icon(LucideIcons.chevronRight),
                       border: InputBorder.none,
                     ),
                   ),

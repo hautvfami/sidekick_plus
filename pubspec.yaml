@@ -27,7 +27,8 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_spinkit: ^5.0.0
-  fvm: ^2.4.1
+  fvm:
+    path: third_party/fvm
   google_fonts: ^8.2.1
   hive: ^2.0.4
   hive_flutter: ^1.0.0
@@ -35,8 +36,9 @@ dependencies:
   http: ^1.2.2
   i18next: ^0.9.0
   intl: ^0.20.2
-  material_design_icons_flutter: ^7.0.7296
-  material_floating_search_bar_2: ^0.5.0
+  lucide_icons_flutter: ^3.1.15
+  material_floating_search_bar_2:
+    path: third_party/material_floating_search_bar_2
   oktoast: ^3.2.0
   open_file: ^4.0.0
   path: ^1.8.3

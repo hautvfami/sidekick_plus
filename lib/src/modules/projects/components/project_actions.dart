@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fvm/fvm.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:open_file/open_file.dart';
 import 'package:sidekick/src/modules/common/utils/helpers.dart';
 
@@ -50,14 +50,14 @@ class ProjectActions extends ConsumerWidget {
         value: ProjectActionOptions.openDirectory,
         child: renderMenuButton(
           label: context.i18n('modules:projects.components.open'),
-          icon: MdiIcons.openInNew,
+          icon: LucideIcons.externalLink,
         ),
       ),
       PopupMenuItem(
         value: ProjectActionOptions.remove,
         child: renderMenuButton(
           label: context.i18n('modules:projects.components.remove'),
-          icon: MdiIcons.delete,
+          icon: LucideIcons.trash,
         ),
       ),
     ];
@@ -82,7 +82,7 @@ class ProjectActions extends ConsumerWidget {
       itemBuilder: (context) {
         return renderMenuOptions(context);
       },
-      child: Icon(MdiIcons.dotsVertical),
+      child: Icon(LucideIcons.moreVertical),
     );
   }
 }
