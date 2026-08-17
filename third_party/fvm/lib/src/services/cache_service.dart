@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:path/path.dart';
@@ -71,12 +72,31 @@ class CacheService {
 
   /// Gets Flutter SDK version from CacheVersion sync
   static String? getSdkVersionSync(CacheVersion version) {
+    // Legacy `version` file. No longer written by Flutter >= 3.47.0.
     final versionFile = File(join(version.dir.path, 'version'));
     if (versionFile.existsSync()) {
       return versionFile.readAsStringSync();
-    } else {
-      return null;
     }
+
+    // Modern version info written by the Flutter tool on setup.
+    // https://github.com/flutter/flutter/issues/171900
+    final versionJson = File(
+      join(version.dir.path, 'bin', 'cache', 'flutter.version.json'),
+    );
+    if (versionJson.existsSync()) {
+      try {
+        final json =
+            jsonDecode(versionJson.readAsStringSync()) as Map<String, dynamic>;
+        final frameworkVersion = json['frameworkVersion'] as String?;
+        if (frameworkVersion != null && frameworkVersion.isNotEmpty) {
+          return frameworkVersion;
+        }
+      } on FormatException {
+        // Ignore malformed file, fall through to null.
+      }
+    }
+
+    return null;
   }
 
   /// Verifies that cacheVersion has been setup
