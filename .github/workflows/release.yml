@@ -14,7 +14,7 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      - uses: actions/checkout@v2.4.0
+      - uses: actions/checkout@v4
 
       - name: Setup Flutter SDK
         uses: subosito/flutter-action@v2.6.1
@@ -115,7 +115,7 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      - uses: actions/checkout@v2.4.0
+      - uses: actions/checkout@v4
 
       - name: Setup Flutter SDK
         uses: subosito/flutter-action@v2.6.1
@@ -184,7 +184,7 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      - uses: actions/checkout@v2.4.0
+      - uses: actions/checkout@v4
 
       - name: Setup Flutter SDK
         uses: subosito/flutter-action@v2.6.1
@@ -217,8 +217,8 @@ jobs:
           path: pubspec.yaml
           contents: |
             msix_config:
-              display_name: Sidekick
-              publisher_display_name: Eduardo M.
+              display_name: Sidekick+
+              publisher_display_name: Sidekick+
               identity_name: 44484EduardoM.SidekickFlutter
               publisher: CN=1E781C91-227E-4505-B5B8-7E5EFE39D3A6
               msix_version: ${{steps.msixver.outputs.value }}.0
