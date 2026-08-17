@@ -34,11 +34,11 @@
       Download Latest
     </a>
     <span> | </span>
-    <a href="https://github.com/fluttertools/sidekick/wiki/Installing">
+    <a href="https://github.com/hautvfami/sidekick_plus/wiki/Installing">
       Installation Instructions
     </a>
     <span> | </span>
-    <a href="https://github.com/fluttertools/sidekick/wiki/Internationalization#adding-a-language">
+    <a href="https://github.com/hautvfami/sidekick_plus/wiki/Internationalization#adding-a-language">
       Adding a new Language
     </a>
   </h3>
