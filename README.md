@@ -1,22 +1,21 @@
-<p align="center"><img src="/assets/svgs/3D-icon.svg" alt="Sidekick" width="100"></p>
+<p align="center"><img src="/assets/svgs/3D-icon.svg" alt="Sidekick+" width="100"></p>
 
-<h1 align="center">Sidekick for Flutter</h1>
- 
+<h1 align="center">Sidekick+</h1>
+
 <div align="center">
   <strong>A simple desktop interface for tools that enhance Flutter's development experience to make it even more delightful.</strong>
-  
+
   <sub>Available for Linux, macOS and Windows.</sub>
 </div>
 
 <br>
 
-> ### 🫱 Community fork
-> This repository is a **community fork** of the original [fluttertools/sidekick](https://github.com/fluttertools/sidekick) project, which is no longer actively maintained upstream.
-> This fork continues the maintenance as a community-driven project — it keeps the app compatible with the latest Flutter SDK releases and incorporates fixes and improvements contributed by the community.
-> Pull requests and contributions are welcome.
+> ### 🫱 Community fork — Sidekick+
+> This repository is a **community fork** of the original [fluttertools/sidekick](https://github.com/fluttertools/sidekick) project, which is no longer actively maintained upstream, continued under the **Sidekick+** name.
+> It stays compatible with the latest Flutter SDK releases and incorporates fixes and improvements contributed by the community.
+> Pull requests and contributions are welcome!
 
 <br>
-
 
 <div align="center">
   <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/hautvfami/sidekick_plus?style=flat-square">
@@ -26,17 +25,13 @@
   <a href="https://github.com/Solido/awesome-flutter"><img alt="Awesome Flutter" src="https://img.shields.io/badge/awesome-flutter-purple?longCache=true&style=flat-square"></a>
   <img alt="License" src="https://img.shields.io/github/license/hautvfami/sidekick_plus?color=orange&style=flat-square">
  </div>
- 
- <br>
+
+<br>
 
 <div align="center">
   <h3>
     <a href="https://github.com/hautvfami/sidekick_plus/releases/latest">
       Download Latest
-    </a>
-    <span> | </span>
-    <a href="https://www.microsoft.com/store/productId/9NZ54K8CW0WG">
-      Microsoft Store
     </a>
     <span> | </span>
     <a href="https://github.com/fluttertools/sidekick/wiki/Installing">
@@ -51,13 +46,12 @@
 
 <br>
 
-[![Download Sidekick](https://github.com/hautvfami/sidekick_plus/blob/main/assets/promo-gh/download-banner.png?raw=true)](https://github.com/hautvfami/sidekick_plus/releases/latest)
+[![Download Sidekick+](https://github.com/hautvfami/sidekick_plus/blob/main/assets/promo-gh/download-banner.png?raw=true)](https://github.com/hautvfami/sidekick_plus/releases/latest)
 
-![Sidekick Screenshot](https://github.com/hautvfami/sidekick_plus/blob/main/assets/promo-gh/screenshot.png?raw=true)
-
+![Sidekick+ Screenshot](https://github.com/hautvfami/sidekick_plus/blob/main/assets/promo-gh/screenshot.png?raw=true)
 
 <div align="center">
-  <sub>Sidekick is available in the following languages:</sub>
+  <sub>Sidekick+ is available in the following languages:</sub>
  <br>
     🇸🇦
     🇧🇩
@@ -74,31 +68,17 @@
     🇮🇹
 </div>
 
- <br>
-
-
-<div align="center">
-  <a href="https://www.microsoft.com/store/productId/9NZ54K8CW0WG"><img src="https://get.microsoft.com/images/en-US%20dark.svg" width="200" /></a>
- <br>
- </div>
- 
- <br>
- 
- <div align="center">
+<br>
 
 ## ✨ Features
-___
-Manage Flutter versions
 
-Explore releases
+- Manage Flutter versions and channels
+- Explore Flutter SDK releases
+- Search versions across your projects
+- Version sandboxing (playground terminal)
+- Project management with your favorite IDE (VS Code, Cursor, Android Studio, Xcode, ...)
 
-Search versions across apps
-
-Version sandboxing (playground)
-
-more...
-
-</div>
+...and more!
 
 ## Contributors 🎉
 

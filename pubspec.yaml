@@ -47,6 +47,7 @@ dependencies:
   pub_api_client: ^3.2.0
   pub_semver: ^2.1.4
   pubspec_parse: ^1.0.0
+  qr_flutter: ^4.1.0
   responsive_grid: ^2.0.0
   shared_preferences: ^2.0.6
   system_info2: ^4.0.0

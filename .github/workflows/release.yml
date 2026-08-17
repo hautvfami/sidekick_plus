@@ -177,92 +177,6 @@ jobs:
           # Tag to use as a release.
           tag: ${{ github.ref }}
 
-  build-windows-msstore:
-    name: "Build Windows for MS Store"
-    runs-on: windows-latest
-    timeout-minutes: 30
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    steps:
-      - uses: actions/checkout@v2.4.0
-
-      - name: Setup Flutter SDK
-        uses: subosito/flutter-action@v2.6.1
-        with:
-          channel: "stable"
-
-      - name: Enable desktop
-        run: flutter config --enable-windows-desktop
-
-      - name: Install Cider
-        run: flutter pub global activate cider
-
-      - name: Set new Flutter version
-        run: cider version ${{ github.event.release.tag_name }}
-
-      - name: Set release changelog
-        run: cider release
-
-      - name: Generate MSIX-compatible version
-        uses: ashley-taylor/regex-property-action@1.2
-        id: msixver
-        with:
-          value: ${{ github.event.release.tag_name }}
-          regex: (\-\w+)|(\+\w+)
-          replacement: ""
-
-      - name: Write MSIX
-        uses: DamianReeves/write-file-action@v1.0
-        with:
-          path: pubspec.yaml
-          contents: |
-            msix_config:
-              display_name: Flutter Sidekick
-              publisher_display_name: Eduardo M.
-              identity_name: SidekickContributors.SidekickFlutter
-              publisher: Sidekick Contributors
-              msix_version: ${{steps.msixver.outputs.value }}.0
-              logo_path: assets\promo-windows\icon.png
-              architecture: x64
-              capabilities: "internetClient,removableStorage"
-              certificate_path: windows\SIDEKICK-CERT.pfx
-              certificate_password: ${{ secrets.WIN_CERT_PASS }}
-              store: true
-              build_windows: false
-          write-mode: append
-
-      - name: Write MS Store true
-        uses: DamianReeves/write-file-action@v1.0
-        with:
-          path: lib/src/modifiers.dart
-          contents: |
-            // Generated file. Do not modify
-            const isMSStore = true;
-          write-mode: overwrite
-
-      - name: Flutter get packages
-        run: flutter pub get
-
-      - name: Build Runner & version
-        run: flutter pub run build_runner build --delete-conflicting-outputs
-
-      - name: Flutter build app
-        run: flutter build windows
-
-      - name: Create MSIX
-        run: flutter pub run msix:create
-
-      - name: Upload MSIX to release
-        uses: svenstaro/upload-release-action@2.2.1
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: build/windows/Runner/release/sidekick.msix
-          asset_name: sidekick-windows-${{ github.event.release.tag_name }}-MS-NS.msix
-          tag: ${{ github.ref }}
-
-      # TODO: Upload automatically to MS Store. MSFT is having some issues with their Azure AD so cannot be done yet.
-
   build-windows-standard:
     name: "Build Windows standard"
     runs-on: windows-latest
@@ -311,8 +225,6 @@ jobs:
               logo_path: assets\promo-windows\icon.png
               architecture: x64
               capabilities: "internetClient,removableStorage"
-              certificate_path: windows\SIDEKICK-CERT.pfx
-              certificate_password: ${{ secrets.WIN_CERT_PASS }}
               store: false
               install_certificate: false
               build_windows: false
@@ -328,7 +240,7 @@ jobs:
         run: flutter build windows
 
       - name: Create MSIX
-        run: flutter pub run msix:publish
+        run: flutter pub run msix:create
 
       - name: Compress artifacts
         run: tar.exe -zcvf windows-${{ github.event.release.tag_name }}.zip build/windows/Runner/release

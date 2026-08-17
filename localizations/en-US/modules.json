@@ -151,7 +151,16 @@
       "resetToDefaultSettings": "Reset to Default Settings",
       "reset": "Reset",
       "ideSelection": "IDE",
-      "whatIdeDoYouWantToOpenYourProjectsWith": "Select the IDE to open your projects with"
+      "whatIdeDoYouWantToOpenYourProjectsWith": "Select the IDE to open your projects with",
+      "about": "About",
+      "aboutDescription": "Sidekick for Flutter is a community fork of the original fluttertools/sidekick project. It continues the maintenance as a community-driven project, keeping the app compatible with the latest Flutter SDK releases and incorporating fixes and improvements contributed by the community.",
+      "aboutForkedFrom": "Forked from",
+      "aboutVisitRepo": "Visit repository",
+      "aboutContributionsWelcome": "Pull requests and contributions are welcome!",
+      "aboutDonate": "Support the project",
+      "aboutDonateSubtitle": "Donate to help us continue maintaining this community project. Every contribution is greatly appreciated!",
+      "aboutDonateOpenPaypal": "Donate via PayPal",
+      "aboutDonateQrHint": "Or scan the QR code to donate"
     }
   },
   "updater": {

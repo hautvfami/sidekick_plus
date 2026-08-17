@@ -6,6 +6,7 @@ import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import '../../modules/common/utils/helpers.dart';
 import '../../modules/common/utils/notify.dart';
+import 'scenes/about_settings.scene.dart';
 import 'scenes/flutter_settings.scene.dart';
 import 'scenes/fvm_settings.scene.dart';
 import 'scenes/general_settings.scene.dart';
@@ -22,12 +23,16 @@ enum NavSection {
 
   /// Flutter
   flutter,
+
+  /// About
+  about,
 }
 
 final _sectionIcons = [
   LucideIcons.slidersHorizontal,
   LucideIcons.layers,
   LucideIcons.terminal,
+  LucideIcons.info,
 ];
 
 /// Settings screen
@@ -52,7 +57,8 @@ class SettingsScreen extends HookConsumerWidget {
     final sections = [
       context.i18n('modules:settings.scenes.general'),
       'FVM',
-      'Flutter'
+      'Flutter',
+      context.i18n('modules:settings.scenes.about'),
     ];
 
     void changeSection(int idx) {
@@ -125,6 +131,7 @@ class SettingsScreen extends HookConsumerWidget {
                 SettingsSectionGeneral(settings, handleSave),
                 FvmSettingsScene(settings, handleSave),
                 SettingsSectionFlutter(settings, handleSave),
+                const AboutSettingsScene(),
               ],
             ),
           ),

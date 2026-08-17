@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sidekick/src/modules/common/utils/helpers.dart';
 
 /// Sidekick title
-const kAppTitle = 'Sidekick';
+const kAppTitle = 'Sidekick+';
 
 /// Sidekick app name
 const kAppName = 'sidekick';
@@ -23,10 +23,13 @@ const kReleaseChannels = ['stable', 'beta'];
 const kMasterChannel = 'master';
 
 /// Github sidekick url
-const kGithubSidekickUrl = 'https://github.com/leoafarias/sidekick';
+const kGithubSidekickUrl = 'https://github.com/hautvfami/sidekick_plus';
+
+/// Upstream sidekick project url
+const kSidekickUpstreamUrl = 'https://github.com/fluttertools/sidekick';
 
 const kSidekickLatestReleaseUrl =
-    'https://api.github.com/repos/leoafarias/sidekick/releases/latest';
+    'https://api.github.com/repos/hautvfami/sidekick_plus/releases/latest';
 
 /// Flutter tags
 const kFlutterTagsUrl = 'https://github.com/flutter/flutter/releases/tag/';
