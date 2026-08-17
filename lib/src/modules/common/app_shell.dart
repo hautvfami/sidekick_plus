@@ -28,18 +28,12 @@ import 'constants.dart';
 
 final _scaffoldKey = GlobalKey<ScaffoldState>();
 
-const pages = [
-  FVMScreen(),
-  ProjectsScreen(),
-  ReleasesScreen(),
-];
+const pages = [FVMScreen(), ProjectsScreen(), ReleasesScreen()];
 
 /// Main widget of the app
 class AppShell extends HookConsumerWidget {
   /// Constructor
-  const AppShell({
-    super.key,
-  });
+  const AppShell({super.key});
 
   NavigationRailDestination renderNavButton(
     BuildContext context,
@@ -99,9 +93,7 @@ class AppShell extends HookConsumerWidget {
         if (context.mounted) {
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(
-              builder: (context) => const CompatCheckScreen(),
-            ),
+            MaterialPageRoute(builder: (context) => const CompatCheckScreen()),
           );
         }
       });
@@ -146,10 +138,7 @@ class AppShell extends HookConsumerWidget {
               ],
             ),
             if (!Platform.isWindows)
-              const VerticalDivider(
-                thickness: 1,
-                width: 1,
-              ),
+              const VerticalDivider(thickness: 1, width: 1),
             Expanded(
               child: Stack(
                 fit: StackFit.expand,
@@ -163,9 +152,7 @@ class AppShell extends HookConsumerWidget {
                             )
                           : null,
                       border: Platform.isWindows
-                          ? Border.all(
-                              color: Theme.of(context).dividerColor,
-                            )
+                          ? Border.all(color: Theme.of(context).dividerColor)
                           : null,
                     ),
                     clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -182,22 +169,21 @@ class AppShell extends HookConsumerWidget {
                         duration: const Duration(milliseconds: 250),
                         reverse:
                             selectedIndex.value < (navigation.previous.index),
-                        transitionBuilder: (
-                          child,
-                          animation,
-                          secondaryAnimation,
-                        ) {
-                          return SharedAxisTransition(
-                            fillColor:
-                                Theme.of(context).brightness == Brightness.light
+                        transitionBuilder:
+                            (child, animation, secondaryAnimation) {
+                              return SharedAxisTransition(
+                                fillColor:
+                                    Theme.of(context).brightness ==
+                                        Brightness.light
                                     ? lightTheme.scaffoldBackgroundColor
                                     : darkTheme.scaffoldBackgroundColor,
-                            animation: animation,
-                            secondaryAnimation: secondaryAnimation,
-                            transitionType: SharedAxisTransitionType.vertical,
-                            child: child,
-                          );
-                        },
+                                animation: animation,
+                                secondaryAnimation: secondaryAnimation,
+                                transitionType:
+                                    SharedAxisTransitionType.vertical,
+                                child: child,
+                              );
+                            },
                         index: selectedIndex.value,
                         children: pages,
                       ),

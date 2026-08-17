@@ -26,9 +26,7 @@ class SkAppBar extends ConsumerWidget implements PreferredSizeWidget {
     void openSettingsScreen() {
       Navigator.push(
         context,
-        MaterialPageRoute(
-          builder: (context) => const SettingsScreen(),
-        ),
+        MaterialPageRoute(builder: (context) => const SettingsScreen()),
       );
     }
 
@@ -39,32 +37,25 @@ class SkAppBar extends ConsumerWidget implements PreferredSizeWidget {
 
     Widget renderTitle() {
       if (!Platform.isMacOS) {
-        return const Row(
-          children: [
-            SizedBox(width: 10),
-            Caption(kAppTitle),
-          ],
-        );
+        return const Row(children: [SizedBox(width: 10), Caption(kAppTitle)]);
       }
       return const Caption(kAppTitle);
     }
 
     return AppBar(
-      backgroundColor: platformBackgroundColor(context),
+      // backgroundColor: platformBackgroundColor(context),
+      backgroundColor: Colors.transparent,
       title: renderTitle(),
       centerTitle: Platform.isWindows ? false : true,
       titleSpacing: 0,
+      elevation: 0,
       leading: Platform.isMacOS ? const WindowButtons() : null,
       actions: [
         const SkUpdateButton(),
-        const SizedBox(
-          width: 10,
-        ),
+        const SizedBox(width: 10),
         const Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Caption(packageVersion),
-          ],
+          children: [Caption(packageVersion)],
         ),
         const SizedBox(width: 10),
         IconButton(
@@ -85,10 +76,7 @@ class SkAppBar extends ConsumerWidget implements PreferredSizeWidget {
       bottom: !Platform.isWindows
           ? const PreferredSize(
               preferredSize: Size.fromHeight(1),
-              child: Divider(
-                height: 0,
-                thickness: 0.5,
-              ),
+              child: Divider(height: 0, thickness: 0.5),
             )
           : null,
       automaticallyImplyLeading: false,

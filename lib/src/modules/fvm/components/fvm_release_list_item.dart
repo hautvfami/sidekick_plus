@@ -14,10 +14,7 @@ import 'fvm_release_status.dart';
 /// FVM release list item
 class FvmReleaseListItem extends ConsumerWidget {
   /// Constructor
-  const FvmReleaseListItem(
-    this.release, {
-    super.key,
-  });
+  const FvmReleaseListItem(this.release, {super.key});
 
   /// Release
   final ReleaseDto release;
@@ -35,10 +32,8 @@ class FvmReleaseListItem extends ConsumerWidget {
           release.isGlobal
               ? ActionChip(
                   label: Caption(context.i18n('modules:fvm.components.global')),
-                  avatar: Icon(LucideIcons.info, size: 20),
-                  onPressed: () {
-                    showGlobalInfoDialog(context);
-                  },
+                  avatar: Icon(LucideIcons.globe),
+                  onPressed: () => showGlobalInfoDialog(context),
                 )
               : Container(),
           const Spacer(),

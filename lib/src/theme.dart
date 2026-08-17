@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_acrylic/flutter_acrylic.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+const kFlutterBlue = Color(0xFF0175C2);
+
 ThemeData get darkPurpleTheme {
   return _customThemeBuilder(
     cardColor: const Color(0xFF180D2F),
     scaffoldBackgroundColor: const Color(0xFF0F0823),
-    primarySwatch: Colors.deepOrange,
+    primaryColor: Colors.deepOrange,
     accentColor: Colors.deepOrangeAccent,
   );
 }
@@ -17,7 +19,7 @@ ThemeData get darkBlueTheme {
   return _customThemeBuilder(
     cardColor: const Color(0xFF092045),
     scaffoldBackgroundColor: const Color(0xFF081231),
-    primarySwatch: Colors.cyan,
+    primaryColor: Colors.cyan,
     accentColor: Colors.cyan,
   );
 }
@@ -26,15 +28,15 @@ ThemeData get darkTheme {
   return _customThemeBuilder(
     cardColor: const Color(0xFF2B2D2F),
     scaffoldBackgroundColor: const Color(0xFF1D1E1F),
-    primarySwatch: Colors.cyan,
-    accentColor: Colors.cyan,
+    primaryColor: kFlutterBlue,
+    accentColor: kFlutterBlue,
   );
 }
 
 ThemeData _customThemeBuilder({
   Color? cardColor,
   Color? scaffoldBackgroundColor,
-  MaterialColor? primarySwatch,
+  Color? primaryColor,
   Color? accentColor,
   Brightness brightness = Brightness.dark,
 }) {
@@ -47,11 +49,14 @@ ThemeData _customThemeBuilder({
   return ThemeData(
     textTheme: GoogleFonts.ibmPlexSansTextTheme(baseTheme.textTheme),
     brightness: brightness,
-    primarySwatch: primarySwatch,
+    primarySwatch: Colors.blue,
     cardColor: cardColor,
     scaffoldBackgroundColor: scaffoldBackgroundColor,
-    colorScheme: baseTheme.colorScheme.copyWith(
-      secondary: accentColor,
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: primaryColor ?? kFlutterBlue,
+      brightness: brightness,
+    ).copyWith(
+      secondary: accentColor ?? kFlutterBlue,
     ),
     dividerColor: Colors.white10,
     outlinedButtonTheme: OutlinedButtonThemeData(
