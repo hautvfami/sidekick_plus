@@ -225,12 +225,12 @@ jobs:
         run: cider release
 
       - name: Generate MSIX-compatible version
-        uses: ashley-taylor/regex-property-action@1.2
         id: msixver
-        with:
-          value: ${{ steps.norm.outputs.version }}
-          regex: (\-\w+)|(\+\w+)
-          replacement: ""
+        shell: bash
+        run: |
+          V="${{ steps.norm.outputs.version }}"
+          V="$(echo "$V" | sed -E 's/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/')"
+          echo "version=${V}.0" >> "$GITHUB_OUTPUT"
 
       - name: Write MSIX
         uses: DamianReeves/write-file-action@v1.0
@@ -242,7 +242,7 @@ jobs:
               publisher_display_name: Sidekick+
               identity_name: 44484EduardoM.SidekickFlutter
               publisher: CN=1E781C91-227E-4505-B5B8-7E5EFE39D3A6
-              msix_version: ${{steps.msixver.outputs.value }}.0
+              msix_version: ${{ steps.msixver.outputs.version }}
               logo_path: assets\promo-windows\icon.png
               architecture: x64
               capabilities: "internetClient,removableStorage"
