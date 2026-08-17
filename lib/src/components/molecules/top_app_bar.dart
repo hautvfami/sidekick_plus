@@ -6,9 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:sidekick/src/components/atoms/typography.dart';
 import 'package:sidekick/src/modules/common/constants.dart';
 import 'package:sidekick/src/modules/navigation/navigation.provider.dart';
-import 'package:sidekick/src/modules/settings/settings.screen.dart';
 import 'package:sidekick/src/modules/updater/components/update_button.dart';
-import 'package:sidekick/src/version.dart';
 import 'package:sidekick/src/window_border.dart';
 
 /// Sidekick top app bar
@@ -21,14 +19,6 @@ class SkAppBar extends ConsumerWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // Opens setting modal
-    void openSettingsScreen() {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const SettingsScreen()),
-      );
-    }
-
     /// Opens up search modal
     void openSearchModal() {
       ref.read(navigationProvider.notifier).goTo(NavigationRoutes.searchScreen);
@@ -53,22 +43,11 @@ class SkAppBar extends ConsumerWidget implements PreferredSizeWidget {
       actions: [
         const SkUpdateButton(),
         const SizedBox(width: 10),
-        const Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [Caption(packageVersion)],
-        ),
-        const SizedBox(width: 10),
         IconButton(
           icon: const Icon(Icons.search),
           iconSize: 20,
           splashRadius: 15,
           onPressed: openSearchModal,
-        ),
-        IconButton(
-          icon: const Icon(Icons.settings),
-          iconSize: 20,
-          splashRadius: 15,
-          onPressed: openSettingsScreen,
         ),
         const SizedBox(width: 10),
         if (!Platform.isMacOS) const WindowButtons(),

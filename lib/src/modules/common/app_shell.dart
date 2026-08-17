@@ -7,6 +7,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:sidekick/src/components/organisms/app_bottom_bar.dart';
+import 'package:sidekick/src/components/atoms/typography.dart';
 import 'package:sidekick/src/modules/common/utils/helpers.dart';
 import 'package:sidekick/src/modules/common/utils/indexed_transition_switcher.dart';
 import 'package:sidekick/src/modules/common/utils/notify.dart';
@@ -14,6 +15,8 @@ import 'package:sidekick/src/modules/compatibility_checks/compat.provider.dart';
 import 'package:sidekick/src/modules/compatibility_checks/compat.screen.dart';
 import 'package:sidekick/src/modules/search/components/search_bar.dart' as sb;
 import 'package:sidekick/src/modules/selected_detail/components/info_drawer.dart';
+import 'package:sidekick/src/modules/settings/settings.screen.dart';
+import 'package:sidekick/src/version.dart';
 
 import '../../components/molecules/top_app_bar.dart';
 import '../../components/organisms/shortcut_manager.dart';
@@ -21,6 +24,8 @@ import '../../modules/common/utils/layout_size.dart';
 import '../../theme.dart';
 import '../fvm/fvm.screen.dart';
 import '../navigation/navigation.provider.dart';
+import '../news/news.provider.dart';
+import '../news/news.screen.dart';
 import '../projects/projects.screen.dart';
 import '../releases/releases.screen.dart';
 import '../selected_detail/selected_detail.provider.dart';
@@ -28,7 +33,12 @@ import 'constants.dart';
 
 final _scaffoldKey = GlobalKey<ScaffoldState>();
 
-const pages = [FVMScreen(), ProjectsScreen(), ReleasesScreen()];
+const pages = [
+  FVMScreen(),
+  ProjectsScreen(),
+  ReleasesScreen(),
+  NewsScreen(),
+];
 
 /// Main widget of the app
 class AppShell extends HookConsumerWidget {
@@ -58,6 +68,7 @@ class AppShell extends HookConsumerWidget {
     final currentRoute = ref.watch(navigationProvider);
     final selectedInfo = ref.watch(selectedDetailProvider);
     final compatInfo = ref.watch(compatProvider);
+    final newsState = ref.watch(flutterNewsProvider);
     final focusNode = useFocusNode();
 
     // Index of item selected
@@ -119,6 +130,30 @@ class AppShell extends HookConsumerWidget {
               onDestinationSelected: (index) {
                 navigation.goTo(NavigationRoutes.values[index]);
               },
+              trailing: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 4),
+                    child: IconButton(
+                      tooltip: context.i18n('modules:common.settings'),
+                      icon: const Icon(Icons.settings, size: 20),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SettingsScreen(),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 8),
+                    child: Caption(packageVersion),
+                  ),
+                ],
+              ),
               destinations: [
                 renderNavButton(
                   context,
@@ -134,6 +169,25 @@ class AppShell extends HookConsumerWidget {
                   context,
                   context.i18n('modules:common.navButtonExplore'),
                   Icons.explore,
+                ),
+                NavigationRailDestination(
+                  icon: Badge.count(
+                    count: newsState.unreadCount,
+                    isLabelVisible: newsState.unreadCount > 0,
+                    child: const Icon(LucideIcons.newspaper, size: 20),
+                  ),
+                  selectedIcon: Badge.count(
+                    count: newsState.unreadCount,
+                    isLabelVisible: newsState.unreadCount > 0,
+                    child: Icon(
+                      LucideIcons.newspaper,
+                      size: 20,
+                      color: Theme.of(context).colorScheme.secondary,
+                    ),
+                  ),
+                  label: Text(
+                    context.i18n('modules:common.navButtonNews'),
+                  ),
                 ),
               ],
             ),

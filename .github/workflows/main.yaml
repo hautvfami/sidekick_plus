@@ -175,13 +175,13 @@ jobs:
         run: flutter pub run msix:create
 
       - name: Compress artifacts
-        run: tar.exe -a -c -f windows-dev.zip build/windows/Runner/release
+        run: tar.exe -a -c -f windows-dev.zip build/windows/x64/runner/Release
 
       - name: Upload Build MSIX
         uses: actions/upload-artifact@v4
         with:
           name: sidekick-windows-dev.msix
-          path: build/windows/Runner/release/sidekick.msix
+          path: build/windows/x64/runner/Release/sidekick.msix
 
       - name: Upload Build Zip
         uses: actions/upload-artifact@v4
