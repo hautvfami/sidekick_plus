@@ -80,7 +80,7 @@ ThemeData _customThemeBuilder({
     ),
     appBarTheme: const AppBarTheme(
       elevation: 0,
-      color: Colors.black54,
+      backgroundColor: Colors.black54,
     ),
     chipTheme: ThemeData.dark().chipTheme.copyWith(
           backgroundColor: Colors.black12,
@@ -111,7 +111,7 @@ ThemeData get lightTheme {
     ),
     appBarTheme: const AppBarTheme(
       elevation: 0,
-      color: Color(0xFFF6F4F6),
+      backgroundColor: Color(0xFFF6F4F6),
       iconTheme: IconThemeData(),
     ),
   ).copyWith(

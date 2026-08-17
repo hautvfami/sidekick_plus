@@ -8,7 +8,6 @@ import 'package:sidekick/src/modules/common/constants.dart';
 import 'package:sidekick/src/modules/navigation/navigation.provider.dart';
 import 'package:sidekick/src/modules/settings/settings.screen.dart';
 import 'package:sidekick/src/modules/updater/components/update_button.dart';
-import 'package:sidekick/src/theme.dart';
 import 'package:sidekick/src/version.dart';
 import 'package:sidekick/src/window_border.dart';
 

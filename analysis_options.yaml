@@ -5,6 +5,8 @@ analyzer:
     - "**/*.g.dart"
     - "lib/src/generated/*.dart"
     - "lib/generated/intl/*.dart"
+    # Ignore vendored packages analyzed in their own context
+    - "third_party/**"
 # linter:
 #   rules:
 

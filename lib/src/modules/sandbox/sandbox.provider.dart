@@ -17,7 +17,7 @@ class TerminalState {
     required this.lines,
     this.processing = false,
     List<String> cmdHistory = const [],
-  }) : _cmdHistory = cmdHistory;
+  }) : _cmdHistory = cmdHistory; // ignore: prefer_initializing_formals
 
   /// Console lines
   List<ConsoleLine> lines;
