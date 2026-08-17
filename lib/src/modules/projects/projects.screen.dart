@@ -93,7 +93,7 @@ class ProjectsScreen extends HookConsumerWidget {
         const SizedBox(width: 10),
         OutlinedButton.icon(
           onPressed: handleChooseDirectory,
-          icon: const Icon(MdiIcons.plus),
+          icon: Icon(MdiIcons.plus),
           label: Text(context.i18n('modules:projects.addProject')),
         ),
       ],

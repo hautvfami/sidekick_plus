@@ -36,7 +36,7 @@ class SkUpdateButton extends HookConsumerWidget {
             buttonPadding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
             title: Row(
               children: [
-                const Icon(MdiIcons.alertDecagram),
+                Icon(MdiIcons.alertDecagram),
                 const SizedBox(width: 10),
                 Heading(
                     context.i18n('modules:updater.components.updateAvailable')),

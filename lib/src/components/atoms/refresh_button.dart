@@ -41,7 +41,7 @@ class RefreshButton extends HookWidget {
       label: Text(context.i18n('components:atoms.refresh')),
       icon: refreshing.value
           ? renderIndicator()
-          : const Icon(MdiIcons.refresh, size: 20),
+          : Icon(MdiIcons.refresh, size: 20),
       onPressed: handleOnPress,
     );
   }

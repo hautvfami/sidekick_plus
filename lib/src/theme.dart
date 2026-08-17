@@ -67,7 +67,7 @@ ThemeData _customThemeBuilder({
     popupMenuTheme: PopupMenuThemeData(
       shape: _roundedShape,
     ),
-    dialogTheme: DialogTheme(
+    dialogTheme: DialogThemeData(
       shape: _roundedShape,
       backgroundColor: scaffoldBackgroundColor,
       titleTextStyle: ThemeData.dark().textTheme.displayLarge,
@@ -95,11 +95,11 @@ ThemeData get lightTheme {
     dividerColor: Colors.black12,
     scaffoldBackgroundColor: const Color(0xfffafafa),
     textButtonTheme: _textButtonThemeData,
-    cardTheme: const CardTheme(
+    cardTheme: const CardThemeData(
       elevation: 3,
       shadowColor: Colors.black45,
     ),
-    dialogTheme: DialogTheme(
+    dialogTheme: DialogThemeData(
       shape: _roundedShape,
       titleTextStyle: ThemeData.light().textTheme.displaySmall,
       contentTextStyle: ThemeData.light().textTheme.bodyLarge,

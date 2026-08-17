@@ -82,7 +82,7 @@ class ProjectActions extends ConsumerWidget {
       itemBuilder: (context) {
         return renderMenuOptions(context);
       },
-      child: const Icon(MdiIcons.dotsVertical),
+      child: Icon(MdiIcons.dotsVertical),
     );
   }
 }

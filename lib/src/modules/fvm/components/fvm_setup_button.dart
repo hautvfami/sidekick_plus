@@ -22,7 +22,7 @@ class SetupButton extends ConsumerWidget {
     return Tooltip(
       message: context.i18n('modules:fvm.components.sdkHasNotFinishedSetup'),
       child: IconButton(
-        icon: const Icon(MdiIcons.alert),
+        icon: Icon(MdiIcons.alert),
         iconSize: 20,
         splashRadius: 20,
         color: Theme.of(context).colorScheme.secondary,

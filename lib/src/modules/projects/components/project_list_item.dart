@@ -122,7 +122,7 @@ class ProjectListItem extends ConsumerWidget {
                     child: IconButton(
                       iconSize: 20,
                       splashRadius: 20,
-                      icon: const Icon(MdiIcons.consoleLine),
+                      icon: Icon(MdiIcons.consoleLine),
                       onPressed: openProjectPlayground,
                     ),
                   ),
@@ -137,7 +137,7 @@ class ProjectListItem extends ConsumerWidget {
                       child: IconButton(
                         iconSize: 20,
                         splashRadius: 20,
-                        icon: ide?.icon ?? const Icon(MdiIcons.alphaPBox),
+                        icon: ide?.icon ?? Icon(MdiIcons.alphaPBox),
                         onPressed: openIde,
                       ),
                     ),

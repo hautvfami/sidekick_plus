@@ -41,7 +41,7 @@ class FvmReleaseStatus extends ConsumerWidget {
       return Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Icon(
+          Icon(
             MdiIcons.checkCircle,
             size: 20,
           ),
@@ -65,10 +65,10 @@ class FvmReleaseStatus extends ConsumerWidget {
       children: [
         Text(currentRelease ?? ''),
         const SizedBox(width: 10),
-        const Icon(MdiIcons.arrowRight, size: 15),
+        Icon(MdiIcons.arrowRight, size: 15),
         const SizedBox(width: 10),
         OutlinedButton.icon(
-          icon: const Icon(MdiIcons.triangle, size: 15),
+          icon: Icon(MdiIcons.triangle, size: 15),
           label: Text(release.release?.version ?? ''),
           onPressed: () {
             ref.read(fvmQueueProvider.notifier).upgrade(context, release);

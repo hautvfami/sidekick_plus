@@ -103,8 +103,8 @@ class Console extends HookWidget {
                       padding: const EdgeInsets.symmetric(
                           vertical: 8, horizontal: 8),
                       child: expand
-                          ? const Icon(MdiIcons.chevronDown)
-                          : const Icon(MdiIcons.chevronUp),
+                          ? Icon(MdiIcons.chevronDown)
+                          : Icon(MdiIcons.chevronUp),
                     )
                   ],
                 ),

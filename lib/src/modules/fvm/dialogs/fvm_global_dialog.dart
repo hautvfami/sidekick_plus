@@ -91,7 +91,7 @@ Future<void> showGlobalInfoDialog(BuildContext context) async {
                       'https://flutter.dev/docs/get-started/install/$os#update-your-path',
                     );
                   },
-                  icon: const Icon(MdiIcons.informationOutline),
+                  icon: Icon(MdiIcons.informationOutline),
                   label: Text(
                     context.i18n('modules:fvm.dialogs.howToUpdateYourPath'),
                   ),

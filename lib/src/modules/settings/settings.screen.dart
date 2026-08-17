@@ -24,7 +24,7 @@ enum NavSection {
   flutter,
 }
 
-const _sectionIcons = [
+final _sectionIcons = [
   MdiIcons.tune,
   MdiIcons.layers,
   MdiIcons.console,

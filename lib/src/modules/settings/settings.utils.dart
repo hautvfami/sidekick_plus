@@ -47,9 +47,9 @@ class IDE {
 final supportedIDEs = [
   IDE(
     SupportedIDE.VSCode,
-    const Icon(MdiIcons.microsoftVisualStudioCode),
+    Icon(MdiIcons.microsoftVisualStudioCode),
     openVsCode,
   ),
-  IDE(SupportedIDE.XCode, const Icon(MdiIcons.appleSafari), openXcode),
+  IDE(SupportedIDE.XCode, Icon(MdiIcons.appleSafari), openXcode),
   IDE(SupportedIDE.Custom, const Icon(Icons.code_rounded), openCustom),
 ];

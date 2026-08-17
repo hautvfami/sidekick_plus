@@ -65,7 +65,7 @@ class ProjectReleaseSelect extends ConsumerWidget {
                       context.i18n('modules:projects.choose'),
                     ),
               // const SizedBox(width: 20),
-              const Icon(MdiIcons.menuDown),
+              Icon(MdiIcons.menuDown),
             ],
           ),
         ));

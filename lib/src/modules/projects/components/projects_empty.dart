@@ -12,7 +12,7 @@ class EmptyProjects extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return EmptyDataset(
-      icon: const Icon(MdiIcons.folder),
+      icon: Icon(MdiIcons.folder),
       child: Padding(
         padding: const EdgeInsets.all(40.0),
         child: Column(

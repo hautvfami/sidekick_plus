@@ -67,7 +67,7 @@ class VersionInstallButton extends HookConsumerWidget {
 
       // Display warning icon instead of download arrow
       if (isCached && version.needSetup) {
-        return const Icon(MdiIcons.alert, size: 20);
+        return Icon(MdiIcons.alert, size: 20);
       }
 
       if (isCached) {

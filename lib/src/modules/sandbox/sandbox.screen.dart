@@ -46,7 +46,7 @@ class SandboxScreen extends HookConsumerWidget {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(MdiIcons.playBox),
+            Icon(MdiIcons.playBox),
             const SizedBox(width: 10),
             Subheading(context.i18n('modules:sandbox.playground')),
           ],

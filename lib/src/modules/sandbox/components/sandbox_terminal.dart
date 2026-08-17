@@ -171,7 +171,7 @@ class SandboxTerminal extends HookConsumerWidget {
                     enabled: !terminalState.processing,
                     controller: textController,
                     onSubmitted: onSubmit,
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       icon: Icon(MdiIcons.chevronRight),
                       border: InputBorder.none,
                     ),
