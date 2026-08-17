@@ -32,9 +32,7 @@ class FVMScreen extends ConsumerWidget {
         Text(
           context.i18n(
             'modules:fvm.numberOfCachedVersions',
-            variables: {
-              'cachedVersions': cachedVersions.all.length,
-            },
+            variables: {'cachedVersions': cachedVersions.all.length},
           ),
         ),
         const SizedBox(width: 20),
@@ -57,11 +55,10 @@ class FVMScreen extends ConsumerWidget {
         child: ListView.separated(
           controller: sdkScrollController,
           itemCount: cachedVersions.all.length,
-          separatorBuilder: (_, _) => const Divider(height: 0),
+          separatorBuilder: (_, _) =>
+              Divider(height: 0, color: Colors.blueGrey.withValues(alpha: 0.3)),
           itemBuilder: (context, index) {
-            return FvmReleaseListItem(
-              cachedVersions.all[index],
-            );
+            return FvmReleaseListItem(cachedVersions.all[index]);
           },
         ),
       ),
