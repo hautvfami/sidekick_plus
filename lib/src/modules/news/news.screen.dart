@@ -98,7 +98,7 @@ class NewsScreen extends HookConsumerWidget {
       controller: scrollController,
       child: ListView.separated(
         controller: scrollController,
-        padding: const EdgeInsets.only(left: 10, right: 10, bottom: 20),
+        padding: const EdgeInsets.fromLTRB(10, 60, 10, 20),
         itemCount: state.posts.length,
         separatorBuilder: (_, _) => const Divider(height: 1),
         itemBuilder: (context, index) {

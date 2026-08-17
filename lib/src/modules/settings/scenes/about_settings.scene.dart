@@ -48,20 +48,8 @@ class AboutSettingsScene extends StatelessWidget {
           ),
           const Divider(),
           ListTile(
-            leading: const Icon(LucideIcons.gitFork, size: 20),
-            title: Text(
-              context.i18n('modules:settings.scenes.aboutForkedFrom'),
-            ),
-            subtitle: const Text('fluttertools/sidekick'),
-            trailing: const Icon(LucideIcons.externalLink, size: 18),
-            onTap: () => openLink(kSidekickUpstreamUrl),
-          ),
-          const Divider(),
-          ListTile(
             leading: const Icon(LucideIcons.codeXml, size: 20),
-            title: Text(
-              context.i18n('modules:settings.scenes.aboutVisitRepo'),
-            ),
+            title: Text(context.i18n('modules:settings.scenes.aboutVisitRepo')),
             subtitle: const Text('hautvfami/sidekick_plus'),
             trailing: const Icon(LucideIcons.externalLink, size: 18),
             onTap: () => openLink(kGithubSidekickUrl),
@@ -69,9 +57,7 @@ class AboutSettingsScene extends StatelessWidget {
           const Divider(),
           ListTile(
             leading: const Icon(LucideIcons.heart, size: 20),
-            title: Text(
-              context.i18n('modules:settings.scenes.aboutDonate'),
-            ),
+            title: Text(context.i18n('modules:settings.scenes.aboutDonate')),
             subtitle: Text(
               context.i18n('modules:settings.scenes.aboutDonateSubtitle'),
             ),
@@ -95,7 +81,9 @@ class AboutSettingsScene extends StatelessWidget {
                   onPressed: () => openLink(kDonateUrl),
                   icon: const Icon(LucideIcons.externalLink, size: 18),
                   label: Text(
-                    context.i18n('modules:settings.scenes.aboutDonateOpenPaypal'),
+                    context.i18n(
+                      'modules:settings.scenes.aboutDonateOpenPaypal',
+                    ),
                   ),
                 ),
               ],

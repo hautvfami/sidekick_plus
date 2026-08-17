@@ -33,12 +33,7 @@ import 'constants.dart';
 
 final _scaffoldKey = GlobalKey<ScaffoldState>();
 
-const pages = [
-  FVMScreen(),
-  ProjectsScreen(),
-  ReleasesScreen(),
-  NewsScreen(),
-];
+const pages = [FVMScreen(), ProjectsScreen(), ReleasesScreen(), NewsScreen()];
 
 /// Main widget of the app
 class AppShell extends HookConsumerWidget {
@@ -127,38 +122,28 @@ class AppShell extends HookConsumerWidget {
               minWidth: kNavigationWidth,
               minExtendedWidth: kNavigationWidthExtended,
               extended: !LayoutSize.isSmall,
+              trailingAtBottom: true,
               onDestinationSelected: (index) {
+                if (index == NavigationRoutes.settingsScreen.index) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SettingsScreen(),
+                    ),
+                  );
+                  return;
+                }
                 navigation.goTo(NavigationRoutes.values[index]);
               },
-              trailing: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 4),
-                    child: IconButton(
-                      tooltip: context.i18n('modules:common.settings'),
-                      icon: const Icon(Icons.settings, size: 20),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const SettingsScreen(),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 8),
-                    child: Caption(packageVersion),
-                  ),
-                ],
+              trailing: Padding(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: Caption(packageVersion),
               ),
               destinations: [
                 renderNavButton(
                   context,
                   context.i18n('modules:common.navButtonDashboard'),
-                  Icons.category,
+                  Icons.flutter_dash,
                 ),
                 renderNavButton(
                   context,
@@ -167,8 +152,8 @@ class AppShell extends HookConsumerWidget {
                 ),
                 renderNavButton(
                   context,
-                  context.i18n('modules:common.navButtonExplore'),
-                  Icons.explore,
+                  context.i18n('modules:common.navButtonReleases'),
+                  LucideIcons.rocket,
                 ),
                 NavigationRailDestination(
                   icon: Badge.count(
@@ -185,9 +170,12 @@ class AppShell extends HookConsumerWidget {
                       color: Theme.of(context).colorScheme.secondary,
                     ),
                   ),
-                  label: Text(
-                    context.i18n('modules:common.navButtonNews'),
-                  ),
+                  label: Text(context.i18n('modules:common.navButtonNews')),
+                ),
+                renderNavButton(
+                  context,
+                  context.i18n('modules:common.settings'),
+                  LucideIcons.settings,
                 ),
               ],
             ),
@@ -247,6 +235,7 @@ class AppShell extends HookConsumerWidget {
                 ],
               ),
             ),
+            // TODO Version
           ],
         ),
       ),

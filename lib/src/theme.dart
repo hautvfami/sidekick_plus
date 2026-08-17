@@ -6,24 +6,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 const kFlutterBlue = Color(0xFF0175C2);
 
-ThemeData get darkPurpleTheme {
-  return _customThemeBuilder(
-    cardColor: const Color(0xFF180D2F),
-    scaffoldBackgroundColor: const Color(0xFF0F0823),
-    primaryColor: Colors.deepOrange,
-    accentColor: Colors.deepOrangeAccent,
-  );
-}
-
-ThemeData get darkBlueTheme {
-  return _customThemeBuilder(
-    cardColor: const Color(0xFF092045),
-    scaffoldBackgroundColor: const Color(0xFF081231),
-    primaryColor: Colors.cyan,
-    accentColor: Colors.cyan,
-  );
-}
-
 ThemeData get darkTheme {
   return _customThemeBuilder(
     cardColor: const Color(0xFF2B2D2F),
@@ -94,9 +76,10 @@ ThemeData get lightTheme {
   return ThemeData(
     brightness: Brightness.light,
     primarySwatch: Colors.blue,
-    colorScheme: ThemeData.light().colorScheme.copyWith(
-          secondary: Colors.blue,
-        ),
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: kFlutterBlue,
+      brightness: Brightness.light,
+    ),
     dividerColor: Colors.black12,
     scaffoldBackgroundColor: const Color(0xfffafafa),
     textButtonTheme: _textButtonThemeData,
@@ -111,7 +94,7 @@ ThemeData get lightTheme {
     ),
     appBarTheme: const AppBarTheme(
       elevation: 0,
-      backgroundColor: Color(0xFFF6F4F6),
+      backgroundColor: Color(0xFFF0F6FA),
       iconTheme: IconThemeData(),
     ),
   ).copyWith(
