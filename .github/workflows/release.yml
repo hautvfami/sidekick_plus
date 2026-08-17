@@ -37,6 +37,7 @@ jobs:
 
       - name: Normalize version (strip leading v)
         id: norm
+        shell: bash
         run: echo "version=$(echo '${{ github.event.release.tag_name }}' | sed 's/^v//')" >> "$GITHUB_OUTPUT"
 
       - name: Set new Flutter version
@@ -147,6 +148,7 @@ jobs:
 
       - name: Normalize version (strip leading v)
         id: norm
+        shell: bash
         run: echo "version=$(echo '${{ github.event.release.tag_name }}' | sed 's/^v//')" >> "$GITHUB_OUTPUT"
 
       - name: Set new Flutter version
@@ -216,6 +218,7 @@ jobs:
 
       - name: Normalize version (strip leading v)
         id: norm
+        shell: bash
         run: echo "version=$(echo '${{ github.event.release.tag_name }}' | sed 's/^v//')" >> "$GITHUB_OUTPUT"
 
       - name: Set new Flutter version
@@ -229,7 +232,9 @@ jobs:
         shell: bash
         run: |
           V="${{ steps.norm.outputs.version }}"
+          [ -z "$V" ] && V="1.0.0"
           V="$(echo "$V" | sed -E 's/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/')"
+          echo "msix_version=${V}.0"
           echo "version=${V}.0" >> "$GITHUB_OUTPUT"
 
       - name: Write MSIX
