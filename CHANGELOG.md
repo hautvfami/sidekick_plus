@@ -1,6 +1,6 @@
 # Changelog
 
-## Sidekick+ 1.3.0 - 2026-08-17
+## Sidekick+ 1.2.0 - 2026-08-17
 
 Sidekick+ — community fork of [fluttertools/sidekick](https://github.com/fluttertools/sidekick).
 
