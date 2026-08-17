@@ -71,6 +71,7 @@ class ReleasesScreen extends ConsumerWidget {
             automaticallyImplyLeading: false,
             expandedHeight: 140.0,
             elevation: 1,
+            scrolledUnderElevation: 0,
             backgroundColor: Theme.of(context).scaffoldBackgroundColor,
             pinned: true,
             excludeHeaderSemantics: true,
@@ -100,6 +101,7 @@ class ReleasesScreen extends ConsumerWidget {
           ),
           SliverAppBar(
             pinned: true,
+            scrolledUnderElevation: 0,
             backgroundColor: Theme.of(context).scaffoldBackgroundColor,
             bottom: const PreferredSize(
               preferredSize: Size.fromHeight(1),

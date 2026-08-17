@@ -55,7 +55,7 @@ void main() async {
 
   runApp(const ProviderScope(child: FvmApp()));
 
-  const initialSize = Size(800, 500);
+  const initialSize = Size(1024, 500);
   windowManager.setMinimumSize(initialSize);
   windowManager.setSize(initialSize);
   if (!Platform.isMacOS) windowManager.setAsFrameless();

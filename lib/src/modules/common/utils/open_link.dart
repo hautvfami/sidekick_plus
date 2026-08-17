@@ -24,18 +24,81 @@ Future<void> openPath(String url) async {
 Future<void> openVsCode(
   String path, {
   String? customLocation,
+}) {
+  return _openVscodeFamily(
+    path,
+    command: 'code',
+    uriScheme: 'vscode',
+  );
+}
+
+Future<void> openVsCodeInsiders(
+  String path, {
+  String? customLocation,
+}) {
+  return _openVscodeFamily(
+    path,
+    command: 'code-insiders',
+    uriScheme: 'vscode-insiders',
+  );
+}
+
+Future<void> openCursor(
+  String path, {
+  String? customLocation,
+}) {
+  return _openVscodeFamily(
+    path,
+    command: 'cursor',
+    uriScheme: 'cursor',
+  );
+}
+
+Future<void> openAntigravity(
+  String path, {
+  String? customLocation,
+}) {
+  return _openVscodeFamily(
+    path,
+    command: 'antigravity',
+    uriScheme: 'antigravity',
+  );
+}
+
+Future<void> _openVscodeFamily(
+  String path, {
+  required String command,
+  required String uriScheme,
 }) async {
   if (Platform.isWindows || Platform.isLinux) {
-    await Process.run('code', [path], runInShell: true);
+    await Process.run(command, [path], runInShell: true);
   } else {
-    // Check if VSCode is installed on path, it it is open the file, otherwise open the url.
-    final vscode = await which('code');
-    if (vscode != null) {
-      await Process.run('code', [path], runInShell: true);
+    // Check if the editor CLI is installed on path, if it is open the
+    // folder, otherwise open it through the deep link scheme.
+    final cli = await which(command);
+    if (cli != null) {
+      await Process.run(command, [path], runInShell: true);
     } else {
-      final vsCodeUri = 'vscode://file/$path';
-      return await openLink(vsCodeUri);
+      final uri = '$uriScheme://file/$path';
+      await openLink(uri);
     }
+  }
+}
+
+Future<void> openAndroidStudio(
+  String path, {
+  String? customLocation,
+}) async {
+  if (Platform.isMacOS) {
+    await Process.run(
+      'open',
+      ['-a', 'Android Studio', path],
+      runInShell: true,
+    );
+  } else if (Platform.isWindows) {
+    await Process.run('studio64', [path], runInShell: true);
+  } else if (Platform.isLinux) {
+    await Process.run('android-studio', [path], runInShell: true);
   }
 }
 

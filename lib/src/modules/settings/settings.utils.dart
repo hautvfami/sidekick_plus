@@ -28,20 +28,27 @@ typedef LaunchFunction = Future<void> Function(
 
 enum SupportedIDE {
   VSCode,
+  VSCodeInsiders,
+  Cursor,
+  Antigravity,
+  AndroidStudio,
   XCode,
   Custom,
 }
 
 class IDE {
   final String name;
+  final String displayName;
   final LaunchFunction launch;
   final Widget icon;
 
   IDE(
     SupportedIDE ideName,
     this.icon,
-    this.launch,
-  ) : name = ideName.name;
+    this.launch, {
+    String? displayName,
+  })  : name = ideName.name,
+        displayName = displayName ?? ideName.name;
 }
 
 final supportedIDEs = [
@@ -49,6 +56,28 @@ final supportedIDEs = [
     SupportedIDE.VSCode,
     Icon(LucideIcons.codeXml),
     openVsCode,
+  ),
+  IDE(
+    SupportedIDE.VSCodeInsiders,
+    Icon(LucideIcons.braces),
+    openVsCodeInsiders,
+    displayName: 'VSCode Insiders',
+  ),
+  IDE(
+    SupportedIDE.Cursor,
+    Icon(LucideIcons.mousePointerClick),
+    openCursor,
+  ),
+  IDE(
+    SupportedIDE.Antigravity,
+    Icon(LucideIcons.rocket),
+    openAntigravity,
+  ),
+  IDE(
+    SupportedIDE.AndroidStudio,
+    Icon(LucideIcons.smartphone),
+    openAndroidStudio,
+    displayName: 'Android Studio',
   ),
   IDE(SupportedIDE.XCode, Icon(LucideIcons.compass), openXcode),
   IDE(SupportedIDE.Custom, const Icon(Icons.code_rounded), openCustom),

@@ -10,21 +10,28 @@
 
 <br>
 
+> ### 🫱 Community fork
+> This repository is a **community fork** of the original [fluttertools/sidekick](https://github.com/fluttertools/sidekick) project, which is no longer actively maintained upstream.
+> This fork continues the maintenance as a community-driven project — it keeps the app compatible with the latest Flutter SDK releases and incorporates fixes and improvements contributed by the community.
+> Pull requests and contributions are welcome.
+
+<br>
+
 
 <div align="center">
-  <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/fluttertools/sidekick?style=flat-square">
-  <img alt="GitHub Downloads for the last release" src="https://img.shields.io/github/downloads/fluttertools/sidekick/latest/total?label=Downloads%20for%20the%20latest%20release&style=flat-square">
-  <img alt="GitHub Downloads overall" src="https://img.shields.io/github/downloads/fluttertools/sidekick/total?label=Overall%20Downloads&style=flat-square">
-  <a href="https://github.com/fluttertools/sidekick/graphs/contributors"><img alt="GitHub All Contributors" src="https://img.shields.io/github/all-contributors/fluttertools/sidekick?style=flat-square"></a>
+  <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/hautvfami/sidekick_plus?style=flat-square">
+  <img alt="GitHub Downloads for the last release" src="https://img.shields.io/github/downloads/hautvfami/sidekick_plus/latest/total?label=Downloads%20for%20the%20latest%20release&style=flat-square">
+  <img alt="GitHub Downloads overall" src="https://img.shields.io/github/downloads/hautvfami/sidekick_plus/total?label=Overall%20Downloads&style=flat-square">
+  <a href="https://github.com/hautvfami/sidekick_plus/graphs/contributors"><img alt="GitHub All Contributors" src="https://img.shields.io/github/all-contributors/hautvfami/sidekick_plus?style=flat-square"></a>
   <a href="https://github.com/Solido/awesome-flutter"><img alt="Awesome Flutter" src="https://img.shields.io/badge/awesome-flutter-purple?longCache=true&style=flat-square"></a>
-  <img alt="License" src="https://img.shields.io/github/license/fluttertools/sidekick?color=orange&style=flat-square">
+  <img alt="License" src="https://img.shields.io/github/license/hautvfami/sidekick_plus?color=orange&style=flat-square">
  </div>
  
  <br>
 
 <div align="center">
   <h3>
-    <a href="https://github.com/fluttertools/sidekick/releases/latest">
+    <a href="https://github.com/hautvfami/sidekick_plus/releases/latest">
       Download Latest
     </a>
     <span> | </span>
@@ -44,9 +51,9 @@
 
 <br>
 
-[![Download Sidekick](https://github.com/fluttertools/sidekick/blob/main/assets/promo-gh/download-banner.png?raw=true)](https://github.com/fluttertools/sidekick/releases/latest)
+[![Download Sidekick](https://github.com/hautvfami/sidekick_plus/blob/main/assets/promo-gh/download-banner.png?raw=true)](https://github.com/hautvfami/sidekick_plus/releases/latest)
 
-![Sidekick Screenshot](https://github.com/fluttertools/sidekick/blob/main/assets/promo-gh/screenshot.png?raw=true)
+![Sidekick Screenshot](https://github.com/hautvfami/sidekick_plus/blob/main/assets/promo-gh/screenshot.png?raw=true)
 
 
 <div align="center">
@@ -154,5 +161,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 ### Notice
 Flutter and the related logo are trademarks of Google LLC. We are **not** endorsed by or affiliated with Google LLC.
+
+This repository is a **community fork** of [fluttertools/sidekick](https://github.com/fluttertools/sidekick) (MIT licensed), maintained by the community to keep the project alive and compatible with the latest Flutter SDK releases.
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

@@ -154,8 +154,6 @@ jobs:
               logo_path: assets\promo-windows\icon.png
               architecture: x64
               capabilities: "internetClient,removableStorage"
-              certificate_path: windows\SIDEKICK-CERT.pfx
-              certificate_password: ${{ secrets.WIN_CERT_PASS }}
               install_certificate: false
               build_windows: false
               store: false

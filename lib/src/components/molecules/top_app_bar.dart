@@ -48,6 +48,7 @@ class SkAppBar extends ConsumerWidget implements PreferredSizeWidget {
       centerTitle: Platform.isWindows ? false : true,
       titleSpacing: 0,
       elevation: 0,
+      scrolledUnderElevation: 0,
       leading: Platform.isMacOS ? const WindowButtons() : null,
       actions: [
         const SkUpdateButton(),
